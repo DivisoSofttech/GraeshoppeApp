@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { LoginPage } from './login.page';
-import { HttpClientModule } from '@angular/common/http';
-import { OAuthModule } from 'angular-oauth2-oidc';
 
 const routes: Routes = [
   {
@@ -20,8 +18,6 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    HttpClientModule,
-    OAuthModule.forRoot()
   ],
   declarations: [LoginPage]
 })

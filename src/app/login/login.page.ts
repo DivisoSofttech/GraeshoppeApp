@@ -34,8 +34,7 @@ export class LoginPage implements OnInit {
         this.navCtrl.navigateRoot('/home');
       }
     }).catch((err:HttpErrorResponse)=>{
-      console.log("Error : "+err.error.error_description);
-      // this.message=err.error.error_description;
+      this.message=err.error.error_description;
     });
   }
 

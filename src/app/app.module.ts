@@ -5,12 +5,14 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './security/auth-interceptor';
-import { OAuthService, OAuthModule } from 'angular-oauth2-oidc';
+import { OAuthService, UrlHelperService, OAuthLogger, OAuthModule } from 'angular-oauth2-oidc';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,13 +21,13 @@ import { OAuthService, OAuthModule } from 'angular-oauth2-oidc';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule,
-    OAuthModule.forRoot()
+    OAuthModule.forRoot(),
+    HttpClientModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    OAuthService,
+
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {
       provide: HTTP_INTERCEPTORS,
