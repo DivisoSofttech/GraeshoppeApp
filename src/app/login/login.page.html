@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title><strong>WELCOME TO Grashopper</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/shapes.svg"></ion-img>
+    <ion-card-header>
+      <ion-card-title text-center><strong>Login</strong></ion-card-title>
+    </ion-card-header>
+    <ion-card-content  no-padding>
+      <ion-card-subtitle *ngIf="message" text-center>
+          {{message}} !
+      </ion-card-subtitle>
+      <ion-item lines="none" no-padding  class="item-inner" >
+        <ion-input    placeholder="Username or Email" [(ngModel)]="username" (ionFocus)="clearMessage()"></ion-input>
+      </ion-item>
+      <ion-item lines="none" no-padding class="item-inner">
+        <ion-input placeholder="Password" type="password" [(ngModel)]="password" (ionFocus)="clearMessage()"></ion-input>
+      </ion-item>
+        <ion-button (click)="login()" expand="block">Login</ion-button>
+        <div center>
+        <ion-label>Dont have an Account ?</ion-label>
+        <ion-label routerLink="/sign-up" > Register</ion-label>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
