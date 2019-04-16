@@ -1,9 +1,61 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>sign-up</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title><strong>Signup</strong></ion-title>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-img src="/assets/shapes.svg"></ion-img>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input placeholder="Enter a username" [(ngModel)]="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Enter your Email" [(ngModel)]="email"
+          type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Password" [(ngModel)]="password"
+          type="password"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-checkbox slot="start"  (ionChange)="dataChanged(true)"></ion-checkbox>
+        <ion-label class="size">By clicking signup your agree to ayoos's
+          useragreement </ion-label>
 
+      </ion-item>
+
+      <ion-button expand="block" (click)="signup()" *ngIf="agreement===true" >Signup</ion-button>
+      <ion-button expand="block"  *ngIf="agreement===false"  color="secondary">Signup</ion-button>
+
+      <br>
+      <ion-label class="center"><strong>Sign in with </strong></ion-label><br><br>
+      <ion-fab>
+        <ion-item lines="none">
+          <ion-fab-button slot="start">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button color="secondary">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button color="danger" slot="end">
+            <ion-icon name="logo-google"></ion-icon>
+          </ion-fab-button>
+        </ion-item>
+
+
+      </ion-fab>
+
+      <br><br> <br>
+
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>

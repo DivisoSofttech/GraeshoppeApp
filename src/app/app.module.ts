@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './security/auth-interceptor';
 import { OAuthService, UrlHelperService, OAuthLogger, OAuthModule } from 'angular-oauth2-oidc';
+import { UserOptionsPopoverComponent } from './user-options-popover/user-options-popover.component';
 
 
 @NgModule({

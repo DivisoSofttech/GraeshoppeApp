@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  <ion-toolbar color="primary">
       <ion-buttons slot="start">
         <ion-menu-button>
 
@@ -13,7 +13,7 @@
         <ion-button>
             <ion-icon name="person-add" size="large"></ion-icon>
         </ion-button>
-        <ion-button>
+        <ion-button (click)="presentPopover($event)">
           <ion-icon name="more" size="large"></ion-icon>
         </ion-button>
 

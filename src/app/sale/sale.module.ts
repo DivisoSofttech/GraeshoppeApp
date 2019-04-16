@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { SalePage } from './sale.page';
+import { UserOptionsPopoverComponent } from '../user-options-popover/user-options-popover.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SalePage]
+  declarations: [SalePage, UserOptionsPopoverComponent],
+  entryComponents: [UserOptionsPopoverComponent]
 })
 export class SalePageModule {}

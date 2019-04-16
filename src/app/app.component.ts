@@ -29,16 +29,7 @@ export const authConfig: AuthConfig = {
 })
 export class AppComponent {
   public appPages = [
-    {
-      title: 'Home',
-      url: '/home',
-      icon: 'home'
-    },
-    {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
-    },
+
     {
       title: 'Sale',
       url: '/sale',

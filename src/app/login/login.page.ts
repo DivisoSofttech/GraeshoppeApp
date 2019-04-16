@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     if (this.oauthService.hasValidAccessToken()) {
-      this.navCtrl.navigateRoot('/home');
+      this.navCtrl.navigateRoot('/sale');
     }
   }
   clearMessage(){
@@ -31,7 +31,7 @@ export class LoginPage implements OnInit {
       let claims = this.oauthService.getIdentityClaims();
       if (claims) console.log(claims);
       if (this.oauthService.hasValidAccessToken()) {
-        this.navCtrl.navigateRoot('/home');
+        this.navCtrl.navigateRoot('/sale');
       }
     }).catch((err:HttpErrorResponse)=>{
       this.message=err.error.error_description;
